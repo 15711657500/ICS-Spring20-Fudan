@@ -81,7 +81,7 @@ module regfile (
                 2'b10:
                     rf[wa3] <= rf[ra2] >> shamt;
                 2'b11:
-                    rf[wa3] <= rf[ra2] >> shamt;
+                    rf[wa3] <= rf[ra2] >>> shamt;
             endcase
     end
     assign rd1 = (ra1 != 0) ? rf[ra1] : 32'b0;

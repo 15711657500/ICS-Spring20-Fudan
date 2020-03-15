@@ -1,4 +1,4 @@
-`define PATH_PREFIX "/home/sunflower/Downloads/project_1/"
+`define PATH_PREFIX "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/"
 `define NAME "benchtest/"
 
 module cpu_tb();
