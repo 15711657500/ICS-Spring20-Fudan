@@ -1,4 +1,4 @@
-`define PATH_PREFIX "/home/sunflower/Downloads/project_1/"
+`define PATH_PREFIX "/home/sunflower/Downloads/Pipeline/"
 `define NAME "benchtest/"
 
 module cpu_tb();
@@ -9,14 +9,20 @@ wire [31:0] pc, instr, read_data, write_data, cpu_data_addr;
 reg clk, reset;
 reg [31:0] tb_data_addr, tb_dmem_data, pc_finished;
 
+//parameter ISIZE = 32, DSIZE = 32;
 string summary;
 // test variables
 integer fans, frun, fimem, fdmem, error_count, imem_counter, dmem_counter;
 
 // module instances
-mips mips(.clk(cpu_clk), .reset(reset), .pc(pc), .instr(instr), .memwrite(cpu_mem_write), .aluout(cpu_data_addr), .writedata(write_data), .readdata(read_data));
-imem imem(.a(pc[7:2]), .rd(instr));
-dmem dmem(.clk(clk), .we(mem_write), .a(cpu_data_addr), .wd(write_data), .rd(read_data));
+//mips mips(.clk(cpu_clk), .reset(reset), .pc(pc), .instr(instr), .memwrite(cpu_mem_write), .aluout(cpu_data_addr), .writedata(write_data), .readdata(read_data));
+//imem #(ISIZE) imem(.a(pc[7:2]), .rd(instr));
+//dmem #(DSIZE) dmem(.clk(clk), .memwrite(mem_write), .a(cpu_data_addr), .writedata(write_data), .rd(read_data));
+mips mips(cpu_clk, reset, pc, instr, cpu_mem_write, cpu_data_addr, write_data, read_data);
+//imem #(ISIZE) imem(pc[7:2], instr);
+//dmem #(DSIZE) dmem(clk, mem_write, cpu_data_addr, write_data, read_data);
+imem imem(pc[7:2], instr);
+dmem dmem(clk, mem_write, cpu_data_addr, write_data, read_data);
 
 // clock and reset
 always #20 clk = ~clk;
@@ -88,7 +94,7 @@ endtask
 initial 
 begin
 	// ddl to finish simulation
-	#10000000 $display("FAILURE: Testbench Failed to finish before ddl!");
+	#1000000 $display("FAILURE: Testbench Failed to finish before ddl!");
 	error_count = error_count + 1;
 	$finish;
 end
