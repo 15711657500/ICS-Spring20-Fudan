@@ -5,31 +5,6 @@ Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mips.sv" Line 23. Module mips has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mips.sv" Line 44. Module datapath has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 23. Module flopr(W=32) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 38. Module adder has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 47. Module sl2 has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 38. Module adder has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 54. Module mux2(W=32) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 54. Module mux2(W=32) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 54. Module mux2(W=32) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 64. Module regfile has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 54. Module mux2(W=5) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 54. Module mux2(W=5) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 54. Module mux2(W=32) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 54. Module mux2(W=32) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 91. Module signext has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsparts.sv" Line 54. Module mux2(W=32) has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/alu.sv" Line 23. Module alu has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mips.sv" Line 83. Module controller has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mips.sv" Line 104. Module maindec has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mips.sv" Line 134. Module aludec has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mips.sv" Line 161. Module shiftdec has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mips.sv" Line 181. Module jrdoc has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsmem.sv" Line 22. Module imem has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipsmem.sv" Line 30. Module dmem has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.flopr(W=32)
