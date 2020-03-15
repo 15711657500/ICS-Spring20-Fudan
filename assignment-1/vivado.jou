@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Mar 15 17:34:08 2020
+# Process ID: 17907
+# Current directory: /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1
+# Command line: vivado -mode tcl -source benchtest/run_simulation.tcl ./project_1/project_1.xpr
+# Log file: /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/vivado.log
+# Journal file: /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/vivado.jou
+#-----------------------------------------------------------
+open_project ./project_1/project_1.xpr
+source benchtest/run_simulation.tcl
+source cpu_tb.tcl
+quit

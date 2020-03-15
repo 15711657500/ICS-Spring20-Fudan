@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Mar 15 17:33:01 2020
+# Process ID: 17615
+# Current directory: /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1
+# Command line: vivado -mode tcl -source benchtest/run_simulation.tcl ./project_1/project_1.xpr
+# Log file: /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/vivado.log
+# Journal file: /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/vivado.jou
+#-----------------------------------------------------------
+open_project ./project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+source benchtest/run_simulation.tcl
+# update_compile_order -fileset sources_1
+# set simulations [get_fileset $env(SIMULATION)]
+# if { [llength simulations] != 0} {
+# 	foreach sim $simulations {
+#                 update_compile_order -fileset $sim
+#                 launch_simulation -simset $sim
+#                 # make simulation complete
+#                 run all
+# 	}
+# }
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj top_vlog.prj
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/project_1.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /home/tanyifan/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 7cfd47e1963542779af7e786a88e4a5b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'aluout' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipstop.sv:29]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'a' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/mipstop.sv:31]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_behav -key {Behavioral:sim_1:Functional:top} -tclbatch {top.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source top.tcl
+## current_wave_config
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+# exit
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 15 17:33:10 2020...
