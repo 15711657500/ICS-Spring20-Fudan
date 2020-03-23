@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module imem #(parameter ISIZE = 32)(
+module imem (
     input logic [5:0]a,
     output logic [31:0]rd
 );
@@ -27,7 +27,7 @@ module imem #(parameter ISIZE = 32)(
     assign rd=RAM[a];
 endmodule
 
-module dmem #(parameter DSIZE = 32)(
+module dmem (
     input logic [31:0]a,
     input logic clk,
     input logic [31:0]wd,
