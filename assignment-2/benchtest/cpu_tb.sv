@@ -1,4 +1,4 @@
-`define PATH_PREFIX "/home/sunflower/Downloads/Pipeline/"
+`define PATH_PREFIX "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment2/"
 `define NAME "benchtest/"
 
 module cpu_tb();
@@ -17,8 +17,8 @@ integer cycle = 0, instr_count = 0;
 
 // module instances
 mips mips(.clk(cpu_clk), .reset(reset), .pc(pc), .instr(instr), .memwrite(cpu_mem_write), .aluout(cpu_data_addr), .writedata(write_data), .readdata(read_data));
-imem #(ISIZE) imem(.a(pc[7:2]), .rd(instr));
-dmem #(DSIZE) dmem(.clk(clk), .memwrite(mem_write), .a(cpu_data_addr), .writedata(write_data), .rd(read_data));
+imem imem(.a(pc[7:2]), .rd(instr));
+dmem dmem(.clk(clk), .memwrite(mem_write), .a(cpu_data_addr), .writedata(write_data), .rd(read_data));
 
 // clock and reset
 always #20 clk = ~clk;
