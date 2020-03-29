@@ -150,12 +150,14 @@ endtask
 initial
 begin
     clk = 1'b0;
-    grader("ad hoc");
-    grader("factorial");
-    grader("bubble sort");
-    grader("gcd");
-    grader("quick multiply");
-    grader("bisection");
+     grader("ad hoc");
+     grader("factorial");
+     grader("bubble sort");
+     grader("gcd");
+     grader("quick multiply");
+     grader("bisection");
+     grader("rf");
+     grader("testzeroext");
 	$display("[Done]\n");
 	$finish;
 end

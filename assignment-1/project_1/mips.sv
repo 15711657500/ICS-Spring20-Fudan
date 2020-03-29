@@ -33,12 +33,12 @@ module mips(
     logic memtoreg, alusrc, regdst, regwrite, jump, pcsrc, zero;
     logic [2:0]alucontrol;
     logic [1:0]shift;
-    logic jr;
+    logic jr, andi_ori;
     datapath dp(clk, reset, memtoreg, pcsrc, alusrc, regdst, regwrite, jump, alucontrol, zero, pc, instr, 
-                aluout, writedata, readdata, shift, jr);
+                aluout, writedata, readdata, shift, jr, andi_ori);
 
     controller c(instr[31:26], instr[5:0], zero, memtoreg, memwrite, 
-                 pcsrc, alusrc, regdst, regwrite, jump, alucontrol, shift, jr);
+                 pcsrc, alusrc, regdst, regwrite, jump, alucontrol, shift, jr, andi_ori);
 endmodule
 
 module datapath (
@@ -53,14 +53,17 @@ module datapath (
     output logic [31:0]aluout, writedata,
     input logic [31:0] readdata,
     input logic [1:0]shift,
-    input logic jr
+    input logic jr,
+    input logic andi_ori
 );
     logic [4:0] writereg;//which register to write
     logic [4:0] temp;
     logic [31:0] temp32;
+    logic [31:0] tempsrcb;
     logic [31:0] temppc;
     logic [31:0] pcnext, pcnextbr, pcplus4, pcbranch;
-    logic [31:0]signimm,signimmsh;
+    logic [31:0] signimm,signimmsh;
+    logic [31:0] zeroimm;
     logic [31:0] srca, srcb;
     logic [31:0] result;
     flopr #(32) pcreg(clk,reset,pcnext,pc);
@@ -76,7 +79,9 @@ module datapath (
     mux2 #(32) resmux1(aluout,readdata,memtoreg,temp32);
     mux2 #(32) resmux2(temp32,pcplus4,regwrite&jump,result);
     signext se(instr[15:0],signimm);
-    mux2 #(32) srcbmux(writedata, signimm,alusrc,srcb);
+    zeroext ze(instr[15:0],zeroimm);
+    mux2 #(32) srcbmux(writedata, signimm,alusrc,tempsrcb);
+    mux2 #(32) srcbmux2(tempsrcb, zeroimm, andi_ori, srcb);
     alu alu(srca, srcb, alucontrol, aluout, zero);
 endmodule
 
@@ -89,16 +94,17 @@ module controller (
     output logic jump,
     output logic [2:0] alucontrol,
     output logic [1:0] shift,
-    output logic jr
+    output logic jr,
+    output logic andi_ori
 );
     logic [2:0]aluop;
     logic branch;
     maindec md(op, memtoreg, memwrite, branch, alusrc, regdst, regwrite, jump, aluop);
     aludec ad(funct, aluop, alucontrol);
-    shiftdec sd(op,funct,shift);
-    jrdoc jd(op, funct, jr);
+    shiftdec sd(op, funct, shift);
+    jrdec jd(op, funct, jr);
     assign pcsrc = branch & (op[0]^zero);//beq and bne
-
+    assign andi_ori = (op[5:1] == 5'b00110);
 endmodule
 
 module maindec (
@@ -178,15 +184,16 @@ module shiftdec (
     end
 endmodule
 
-module jrdoc (
+module jrdec (
     input logic [5:0]op,func,
     output logic jr
 );
     always_comb 
     begin
-        if(op==6'b000000 && func == 6'b001000)
+        if(op == 6'b000000 && func == 6'b001000)
             jr <= 1;
         else
             jr <= 0;    
     end
 endmodule
+

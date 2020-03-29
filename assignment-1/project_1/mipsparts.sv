@@ -96,3 +96,9 @@ module signext (
     
 endmodule
 
+module zeroext (
+    input logic [15:0]a,
+    output logic [31:0]out
+);
+    assign out = {16'b0, a};
+endmodule
