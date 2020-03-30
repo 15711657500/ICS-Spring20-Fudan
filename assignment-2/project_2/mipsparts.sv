@@ -22,7 +22,7 @@
 
 module flopr#(parameter W=8)
     (
-        input logic clk, reset, en,
+        input logic clk, reset,
         input logic [W-1:0] d,
         output logic [W-1:0] out
     );
@@ -30,11 +30,25 @@ module flopr#(parameter W=8)
         begin
             if (reset)
                 out <= 0;
-            else if (!en)
+            else
                 out <= d;
         end
 endmodule
 
+module flopenr#(parameter W=8)
+    (
+        input logic clk, reset ,en,
+        input logic [W-1:0] d,
+        output logic [W-1:0] out
+    );
+    always_ff @(posedge clk, posedge reset)
+        begin
+            if (reset)
+                out <= 0;
+            else if (en)
+                out <= d;
+        end
+endmodule: flopenr
 module adder(
     input logic [31:0] a, [31:0] b,
     output logic [31:0] out
@@ -85,7 +99,7 @@ module regfile(
     input logic [4:0] shamt
 );
     logic [31:0] rf [31:0];
-    always_ff @(posedge clk)
+    always_ff @(negedge clk)
         begin
             if (we3)
                 case (shift)
@@ -117,8 +131,36 @@ module zeroext(
     assign out = {16'b0, a};
 endmodule: zeroext
 
-module eqer #(parameter W=32)
+module eqcmp#(parameter W=32)
     (input logic [W-1:0] a, b, output logic eq);
     assign eq = (a == b);
-endmodule : eqer
+endmodule
 
+module floprc#(parameter W=8)(input logic clk, reset, clear, input logic [W-1:0] d, output logic [W-1:0] q);
+    always_ff @(posedge clk, posedge reset)
+        begin
+            if (reset)
+                q <= #1 0;
+            else if (clear)
+                q <= #1 0;
+            else
+                q <= #1 d;
+        end
+endmodule: floprc
+
+module flopenrc#(parameter W=8)
+    (
+        input logic clk, reset, en, clear,
+        input logic [W-1:0] d,
+        output logic [W-1:0] q
+    );
+    always_ff @(posedge clk, posedge reset)
+        begin
+            if (reset)
+                q <= #1 0;
+            else if (clear)
+                q <= #1 0;
+            else if (en)
+                q <= #1 d;
+        end
+endmodule: flopenrc

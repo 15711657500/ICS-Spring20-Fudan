@@ -29,9 +29,9 @@ endmodule
 
 module dmem (
     input logic clk,
-    input logic we,
+    input logic memwrite,
     input logic [31:0]a,
-    input logic [31:0]wd,
+    input logic [31:0]writedata,
     output logic [31:0]rd
 );
     logic [31:0] RAM[63:0];
@@ -39,7 +39,7 @@ module dmem (
 
     always_ff @( posedge clk ) 
     begin
-        if(we)
-            RAM[a[31:2]] <= wd;
+        if(memwrite)
+            RAM[a[31:2]] <= writedata;
     end
 endmodule
