@@ -1,0 +1,24 @@
+ 0x0 : addi $a0, $0, 10     | 2004000a
+ 0x4 : addi $sp, $0, 128    | 201d0080
+ 0x8 : addi $v0, $0, 0      | 20020000
+ 0xc : jal rf               | 0c000009
+0x10 : nop                  | 00000000
+0x14 : nop                  | 00000000
+0x18 : nop                  | 00000000
+0x1c : nop                  | 00000000
+0x20 : nop                  | 00000000
+0x24 :                      | 
+0x24 : rf:                  | 
+0x24 : addi $sp, $sp, -8    | 23bdfff8
+0x28 : sw $ra, 0($sp)       | afbf0000
+0x2c : beq $a0, $0, return  | 10040003
+0x30 : add $v0, $v0, $a0    | 00441020
+0x34 : addi $a0, $a0, -1    | 2084ffff
+0x38 : jal rf               | 0c000009
+0x3c : return:              | 
+0x3c : lw $ra, 0($sp)       | 8fbf0000
+0x40 : addi $sp, $sp, 8     | 23bd0008
+0x44 :                      | 
+0x44 : jr $ra               | 03e00008
+0x48 : nop                  | 00000000
+0x4c : nop                  | 

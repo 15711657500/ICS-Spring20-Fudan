@@ -1,4 +1,4 @@
-`define PATH_PREFIX "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment2/"
+`define PATH_PREFIX "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/"
 `define NAME "benchtest/"
 
 module cpu_tb();
@@ -159,6 +159,8 @@ begin
     grader("gcd");
     grader("quick multiply");
     grader("bisection");
+    grader("rf");
+    grader("testzeroext");
 	$display("[Done]\n");
     $display("CPI = %f\n", $bitstoreal(cycle) / $bitstoreal(instr_count));
 	$finish;

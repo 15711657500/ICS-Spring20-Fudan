@@ -37,7 +37,7 @@ endmodule
 
 module flopenr#(parameter W=8)
     (
-        input logic clk, reset ,en,
+        input logic clk, reset, en,
         input logic [W-1:0] d,
         output logic [W-1:0] out
     );
@@ -94,23 +94,14 @@ module regfile(
     input logic we3,
     input logic [4:0] ra1, ra2, wa3,
     input logic [31:0] wd3,
-    output logic [31:0] rd1, rd2,
-    input logic [1:0] shift,
-    input logic [4:0] shamt
+    output logic [31:0] rd1, rd2
 );
     logic [31:0] rf [31:0];
     always_ff @(negedge clk)
         begin
             if (we3)
-                case (shift)
-                    2'b00: rf[wa3] <= wd3;
-                    2'b01:
-                        rf[wa3] <= rf[ra2] << shamt;
-                    2'b10:
-                        rf[wa3] <= rf[ra2] >> shamt;
-                    2'b11:
-                        rf[wa3] <= rf[ra2] >>> shamt;
-                endcase
+                rf[wa3] <= wd3;
+
         end
     assign rd1 = (ra1 != 0) ? rf[ra1]:32'b0;
     assign rd2 = (ra2 != 0) ? rf[ra2]:32'b0;
@@ -118,9 +109,10 @@ endmodule
 
 module signext(
     input logic [15:0] a,
-    output logic [31:0] out
+    output logic [31:0] out,
+    input logic s
 );
-    assign out = {{16{a[15]}}, a};
+    assign out = (s) ? {16'b0, a}:{{16{a[15]}}, a};
 
 endmodule
 
@@ -158,7 +150,7 @@ module flopenrc#(parameter W=8)
         begin
             if (reset)
                 q <= #1 0;
-            else if (clear)
+            else if (clear & en)
                 q <= #1 0;
             else if (en)
                 q <= #1 d;

@@ -7,7 +7,7 @@ module regD(
     input logic [31:0] pcplus4F,
     output logic [31:0] pcplus4D
 );
-    always_ff @(posedge clk, posedge clr)
+    always_ff @(posedge clk)
         begin
             if (clr)
                 begin
@@ -35,30 +35,33 @@ module regE(
     output logic [4:0] rsE, rtE, rdE,
     output logic [31:0] signimmE
 );
-    always_ff @(posedge clk, posedge clr)
+    logic sig;
+    always_ff @(posedge clk)
         begin
-            if (clr)
+            sig <= 0;
+            if (clr == 1)
                 begin
-                    regwriteD <= 0;
-                    memtoregD <= 0;
-                    memwriteD <= 0;
-                    alusrcD <= 0;
-                    regdstD <= 0;
-                    alucontrolD <= 3'b0;
-                    rd1D <= 32'b0;
-                    rd2D <= 32'b0;
-                    rsD <= 4'b0;
-                    rtD <= 4'b0;
-                    rdD <= 4'b0;
-                    signimmD <= 32'b0;
+                    regwriteE <= 0;
+                    memtoregE <= 0;
+                    memwriteE <= 0;
+                    alusrcE <= 0;
+                    regdstE <= 0;
+                    alucontrolE <= 3'b0;
+                    rd1E <= 32'b0;
+                    rd2E <= 32'b0;
+                    rsE <= 4'b0;
+                    rtE <= 4'b0;
+                    rdE <= 4'b0;
+                    signimmE <= 32'b0;
+                    sig <= 1;
                 end
             else begin
                 {regwriteE, memtoregE, memwriteE, alusrcE, regdstE, alucontrolE, rd1E, rd2E, rsE, rtE, rdE, signimmE}
                     <=
-                    {regwriteD, memtoregD, memwriteD, alusrcD, regdstD, alucontrolD, rd1D, rd2D, rsD, rtD, rdD, signimmD};
+                {regwriteD, memtoregD, memwriteD, alusrcD, regdstD, alucontrolD, rd1D, rd2D, rsD, rtD, rdD, signimmD};
             end
         end
-endmodule
+endmodule : regE
 
 module regM(
     input logic clk,
@@ -78,7 +81,19 @@ module regM(
 endmodule
 
 module regW(
-    input logic clk
+    input logic clk,
+    input logic regwriteM, memtoregM,
+    input logic [31:0]readdataM, aluoutM,
+    input logic [4:0]writeregM,
+    output logic regwriteW, memtoregW,
+    output logic [31:0]readdataW, aluoutW,
+    output logic [4:0]writeregW
 );
+    always_ff @(posedge clk)
+    begin
+        {regwriteW, memtoregW, readdataW, aluoutW, writeregW}
+    <=
+        {regwriteM, memtoregM, readdataM, aluoutM, writeregM};
+    end
 
-endmodule
+endmodule : regW

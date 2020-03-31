@@ -34,6 +34,9 @@ module alu(
             3'b000: aluout <= srca & srcb;
             3'b001: aluout <= srca | srcb;
             3'b111: aluout <= ((srca < srcb) ? 32'b1: 32'b0);
+            3'b011: aluout <= srcb << srca;
+            3'b100: aluout <= srcb >> srca;
+            3'b101: aluout <= srcb >>> srca;
             default: aluout <= 32'b0;
         endcase
     end

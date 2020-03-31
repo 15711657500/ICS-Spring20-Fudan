@@ -1,0 +1,24 @@
+addi $a0, $0, 10
+addi $sp, $0, 128
+addi $v0, $0, 0
+jal rf
+nop
+nop
+nop
+nop
+nop
+
+rf:
+	addi $sp, $sp, -8
+	sw $ra, 0($sp)
+	beq $a0, $0, return
+	add $v0, $v0, $a0
+	addi $a0, $a0, -1
+	jal rf
+return:
+	lw $ra, 0($sp)
+	addi $sp, $sp, 8
+	
+	jr $ra
+	nop
+	nop
