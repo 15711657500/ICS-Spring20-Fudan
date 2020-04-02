@@ -53,7 +53,8 @@ module datapath(
     logic [31:0] pcplus4D, instrD;
     logic [31:0] aluoutE, aluoutW;
     logic [31:0] readdataW, resultW;
-    logic [1:0] forwardAD, forwardBD;
+    logic [1:0] forwardAD;
+    logic forwardBD;
     logic stallD;
     logic flushD;
     logic [4:0] rsE, rtE, rdE;
@@ -63,6 +64,8 @@ module datapath(
     logic [4:0] writeregW;
     logic [31:0] pcnextFD0;
     logic [4:0] rtE1;
+    logic [31:0] aluoutE1;
+    logic [31:0] pcplus4E;
     mux2#(32) pcbrmux(.d0(pcplus4F), .d1(pcbranchD), .out(pcnextbrFD), .s(pcsrcD));// todo:
     mux2#(32) pcmux(.d0(pcnextbrFD), .d1({pcplus4D[31:28], instrD[25:0], 2'b00}), .s(jumpD), .out(pcnextFD0));
     mux2#(32) jrmux(.d0(pcnextFD0), .d1(srca2D), .s(jrD), .out(pcnextFD));
@@ -84,22 +87,21 @@ module datapath(
 
     regfile rf(.clk(clk), .ra1(rsD), .ra2(rtD), .wa3(writeregW), .wd3(resultW), .rd1(srcaD), .rd2(srcbD), .we3(regwriteW));
 //    mux2#(32) forwardadmux(.d0(srcaD), .d1(aluoutM), .s(forwardAD), .out(srca2D));
-//    mux2#(32) forwardbdmux(.d0(srcbD), .d1(aluoutM), .s(forwardBD), .out(srcb2D));
-    mux4#(32) forwardadmux(.d0(srcaD), .d1(aluoutM), .d2(readdataM), .d3(32'b0), .s(forwardAD), .out(srca2D));
-    mux4#(32) forwardbdmux(.d0(srcbD), .d1(aluoutM), .d2(readdataM), .d3(32'b0), .s(forwardBD), .out(srcb2D));
-    eqcmp comp(srca2D, srcb2D, equalD);
+    mux2#(32) forwardbdmux(.d0(srcbD), .d1(aluoutM), .s(forwardBD), .out(srcb2D));
+    mux4#(32) forwardadmux(.d0(srcaD), .d1(aluoutM), .d2(readdataM), .d3(aluoutE1), .s(forwardAD), .out(srca2D));
+    //mux4#(32) forwardbdmux(.d0(srcbD), .d1(aluoutM), .d2(readdataM), .d3(32'b0), .s(forwardBD), .out(srcb2D));
+    eqcmp comp(srca3D, srcb2D, equalD);
     mux2#(32) shiftmux(.d0(srca2D), .d1({27'b0, instrD[10:6]}), .s(shiftD), .out(srca3D));
     assign flushD = pcsrcD | jumpD | jrD;
 
 //    // Execute
-    mux2#(32) writeramux(rtE, 5'b11111, regwriteE & jumpE, rtE1);
+    mux2#(5) writeramux(rtE, 5'b11111, regwriteE & jumpE, rtE1);
     mux2#(5) wrmux(.d0(rtE1), .d1(rdE), .s(regdstE), .out(writeregE));
     mux4#(32) forwardaemux(.d0(srcaE), .d1(resultW), .d2(aluoutM), .d3(32'b0), .s(forwardAE), .out(srca2E));
     mux4#(32) forwardbemux(.d0(srcbE), .d1(resultW), .d2(aluoutM), .d3(32'b0), .s(forwardBE), .out(srcb2E));
     mux2#(32) srcBmux(.d0(srcb2E), .d1(signimmE), .s(alusrcE), .out(srcb3E));
     alu alu(.srca(srca2E), .srcb(srcb3E), .alucontrol(alucontrolE), .aluout(aluoutE));
-    logic [31:0] aluoutE1;
-    logic [31:0] pcplus4E;
+
     mux2#(32) resmux2(aluoutE, pcplus4E, regwriteE & jumpE, aluoutE1);
     floprc#(32) r1E(clk, reset, flushE, srca3D, srcaE);
     floprc#(32) r2E(clk, reset, flushE, srcb2D, srcbE);
