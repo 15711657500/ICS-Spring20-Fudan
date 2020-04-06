@@ -4,31 +4,4 @@ Running: /home/tanyifan/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto 7c
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.flopr(W=32)
-Compiling module xil_defaultlib.adder
-Compiling module xil_defaultlib.sl2
-Compiling module xil_defaultlib.mux2(W=32)
-Compiling module xil_defaultlib.regfile
-Compiling module xil_defaultlib.mux2(W=5)
-Compiling module xil_defaultlib.signext
-Compiling module xil_defaultlib.alu
-Compiling module xil_defaultlib.datapath
-Compiling module xil_defaultlib.maindec
-Compiling module xil_defaultlib.aludec
-Compiling module xil_defaultlib.shiftdec
-Compiling module xil_defaultlib.jrdoc
-Compiling module xil_defaultlib.controller
-Compiling module xil_defaultlib.mips
-Compiling module xil_defaultlib.imem
-Compiling module xil_defaultlib.dmem
-Compiling module xil_defaultlib.cpu_tb
-WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/benchtest/cpu_tb.sv" Line 35. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/benchtest/cpu_tb.sv" Line 53. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/benchtest/cpu_tb.sv" Line 108. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/benchtest/cpu_tb.sv" Line 118. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-1/benchtest/cpu_tb.sv" Line 136. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot cpu_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
