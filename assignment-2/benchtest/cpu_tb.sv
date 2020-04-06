@@ -1,8 +1,5 @@
 `define PATH_PREFIX "../../../../"
-<<<<<<< HEAD
 
-=======
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
 `define NAME "benchtest/"
 
 
@@ -33,7 +30,6 @@ integer fans, frun, fimem, fdmem, error_count, imem_counter, dmem_counter;
 
 integer cycle = 0, instr_count = 0;
 
-<<<<<<< HEAD
 
 
 `ifdef checking
@@ -44,26 +40,15 @@ integer cycle = 0, instr_count = 0;
 
 
 
-=======
-`ifdef checking
-    integer error_test = 0;
-`endif
-
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
 // module instances
 
 mips mips(.clk(cpu_clk), .reset(reset), .pc(pc), .instr(instr), .memwrite(cpu_mem_write), .aluout(cpu_data_addr), .writedata(write_data), .readdata(read_data));
-<<<<<<< HEAD
 
 imem imem(.a(pc[7:2]), .rd(instr));
 
 dmem dmem(.clk(clk), .we(mem_write), .a(cpu_data_addr), .wd(write_data), .rd(read_data));
 
 
-=======
-imem imem(.a(pc[7:2]), .rd(instr));
-dmem dmem(.clk(clk), .we(mem_write), .a(cpu_data_addr), .wd(write_data), .rd(read_data));
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
 
 // clock and reset
 
@@ -98,7 +83,6 @@ task judge(
     if (ans != out)
 
         begin
-<<<<<<< HEAD
 
             `ifdef checking
 
@@ -116,16 +100,6 @@ task judge(
 
 		    `endif
 
-=======
-            `ifdef checking
-		      error_count = error_count + 1;
-		    `else
-		      begin
-		          $display("[Error] PC: 0x%x Cycle: %0d\tExpected: %0s, Got: %0s", pc, cycle, ans, out);
-		          $stop;
-              end
-		    `endif
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
         end
 
 endtask
@@ -157,13 +131,9 @@ task judge_memory(
                 if (tb_dmem_data != dmem.RAM[tb_data_addr/4])
 
                     begin
-<<<<<<< HEAD
 
                         $display("FAILURE: dmem 0x%0h expect 0x%0h but get 0x%0h",
 
-=======
-                        $display("FAILURE: dmem 0x%0h expect 0x%0h but get 0x%0h",
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
                             tb_data_addr, tb_dmem_data, dmem.RAM[tb_data_addr/4]);
 
                         error_count = error_count + 1;
@@ -173,7 +143,6 @@ task judge_memory(
                 tb_data_addr = tb_data_addr + 4;
 
             end
-<<<<<<< HEAD
 
         `ifndef checking
 
@@ -181,11 +150,6 @@ task judge_memory(
 
         `endif
 
-=======
-        `ifndef checking
-            $display("successfully pass memory judge");
-        `endif
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
     end
 
 endtask
@@ -231,7 +195,6 @@ task runtime_checker(
                 end
 
         end
-<<<<<<< HEAD
 
     `ifndef checking
 
@@ -239,11 +202,6 @@ task runtime_checker(
 
     `endif
 
-=======
-    `ifndef checking
-        $display("successfully pass runtime checker");
-    `endif
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
 endtask
 
 
@@ -313,13 +271,9 @@ task init(input string name);
             imem_counter = imem_counter + 1;
 
         end
-<<<<<<< HEAD
 
     $display("%0d instructions in total", imem_counter);
 
-=======
-    $display("%0d instructions in total", imem_counter);
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
     $fclose(fimem);
 
 endtask
@@ -351,16 +305,11 @@ task grader(input string name);
     $fscanf(fans, "%h", pc_finished);
 
     frun = $fopen({ `PATH_PREFIX, `NAME, name, "/", name, ".run"}, "r");
-<<<<<<< HEAD
 
     error_count = 0;
 
     runtime_checker(frun);
 
-=======
-    error_count = 0;
-    runtime_checker(frun);
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
     $fclose(frun);
 
 	judge_memory(fans);
@@ -368,7 +317,6 @@ task grader(input string name);
     $fclose(fans);
 
     if (error_count != 0)
-<<<<<<< HEAD
 
         begin
 
@@ -384,15 +332,6 @@ task grader(input string name);
 
         end
 
-=======
-        begin
-            $display("Find %0d error(s)", error_count);
-            `ifdef checking
-                error_test = error_test + 1;
-                $display("[ERROR] %0s\n", name);
-            `endif
-        end
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
     else
 
         $display("[OK] %0s\n", name);
@@ -422,7 +361,6 @@ begin
     grader("bisection");
 
 	$display("[Done]\n");
-<<<<<<< HEAD
 
     $display("CPI = %0f\n", $bitstoreal(cycle) / $bitstoreal(instr_count));
 
@@ -434,13 +372,6 @@ begin
 
     $finish;
 
-=======
-    $display("CPI = %0f\n", $bitstoreal(cycle) / $bitstoreal(instr_count));
-	`ifdef checking
-	   $display("Error test: %0d\n", error_test);
-	`endif
-    $finish;
->>>>>>> 740a3ef183e7947019cdf55eb085096737e13dae
 end
 
 
