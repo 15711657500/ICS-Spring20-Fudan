@@ -6,6 +6,7 @@ module cpu_tb();
 wire mem_write, cpu_clk, finish, cpu_mem_write;
 wire [31:0] pc, instr, read_data, write_data, cpu_data_addr;
 
+logic flushD, stallD;
 reg clk, reset;
 reg [31:0] tb_data_addr, tb_dmem_data, pc_finished;
 
@@ -16,7 +17,7 @@ integer fans, frun, fimem, fdmem, error_count, imem_counter, dmem_counter;
 integer cycle = 0, instr_count = 0;
 
 // module instances
-mips mips(.clk(cpu_clk), .reset(reset), .pc(pc), .instr(instr), .memwrite(cpu_mem_write), .aluout(cpu_data_addr), .writedata(write_data), .readdata(read_data));
+mips mips(.clk(cpu_clk), .reset(reset), .pc(pc), .instr(instr), .memwrite(cpu_mem_write), .aluout(cpu_data_addr), .writedata(write_data), .readdata(read_data), .stallD(stallD),.flushD(flushD));
 imem imem(.a(pc[7:2]), .rd(instr));
 dmem dmem(.clk(clk), .memwrite(mem_write), .a(cpu_data_addr), .writedata(write_data), .rd(read_data));
 
@@ -75,7 +76,8 @@ task runtime_checker(
         begin@(negedge clk)
             cycle = cycle + 1;
             
-            if (~mips.dp.flushD & ~mips.dp.haz.stallD)
+            //if (~mips.dp.flushD & ~mips.dp.haz.stallD)
+            if(~flushD & ~stallD)
                 instr_count = instr_count + 1;
 
             if (mem_write)
@@ -159,8 +161,9 @@ begin
     grader("gcd");
     grader("quick multiply");
     grader("bisection");
-    grader("rf");
-    grader("testzeroext");
+//    grader("rf");
+//    grader("testzeroext");
+//    grader("testjr");
 	$display("[Done]\n");
     $display("CPI = %f\n", $bitstoreal(cycle) / $bitstoreal(instr_count));
 	$finish;
