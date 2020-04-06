@@ -1,0 +1,513 @@
+
+*** Running vivado
+    with args -log mips.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mips.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source mips.tcl -notrace
+Command: synth_design -top mips -part xc7a12ticsg325-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a12ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a12ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8678 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1380.078 ; gain = 0.000 ; free physical = 650 ; free virtual = 3663
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mips' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'controller' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:128]
+INFO: [Synth 8-6157] synthesizing module 'maindec' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:178]
+INFO: [Synth 8-6155] done synthesizing module 'maindec' (1#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:178]
+INFO: [Synth 8-6157] synthesizing module 'aludec' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:208]
+INFO: [Synth 8-6155] done synthesizing module 'aludec' (2#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:208]
+INFO: [Synth 8-6157] synthesizing module 'jrdec' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:258]
+INFO: [Synth 8-6155] done synthesizing module 'jrdec' (3#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:258]
+INFO: [Synth 8-6157] synthesizing module 'shiftdec' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:238]
+INFO: [Synth 8-6155] done synthesizing module 'shiftdec' (4#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:238]
+INFO: [Synth 8-6157] synthesizing module 'floprc' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:131]
+	Parameter W bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'floprc' (5#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:131]
+INFO: [Synth 8-6157] synthesizing module 'flopr' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:23]
+	Parameter W bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr' (6#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized0' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:23]
+	Parameter W bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized0' (6#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (7#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:128]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:28]
+INFO: [Synth 8-6157] synthesizing module 'mux2' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:68]
+	Parameter W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2' (8#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:68]
+INFO: [Synth 8-6157] synthesizing module 'flopenr' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:38]
+	Parameter W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenr' (9#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:38]
+INFO: [Synth 8-6157] synthesizing module 'adder' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:52]
+INFO: [Synth 8-6155] done synthesizing module 'adder' (10#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:52]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:143]
+	Parameter W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc' (11#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:143]
+INFO: [Synth 8-6157] synthesizing module 'signext' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:110]
+INFO: [Synth 8-6155] done synthesizing module 'signext' (12#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:110]
+INFO: [Synth 8-6157] synthesizing module 'sl2' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:61]
+INFO: [Synth 8-6155] done synthesizing module 'sl2' (13#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:61]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:92]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (14#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:92]
+INFO: [Synth 8-6157] synthesizing module 'mux4' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:77]
+	Parameter W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux4' (15#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:77]
+INFO: [Synth 8-6157] synthesizing module 'eqcmp' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:126]
+	Parameter W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'eqcmp' (16#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:126]
+INFO: [Synth 8-6157] synthesizing module 'mux2__parameterized0' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:68]
+	Parameter W bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2__parameterized0' (16#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:68]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/alu.sv:23]
+INFO: [Synth 8-226] default block is never used [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/alu.sv:31]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (17#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/alu.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'floprc__parameterized0' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:131]
+	Parameter W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'floprc__parameterized0' (17#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:131]
+INFO: [Synth 8-6157] synthesizing module 'floprc__parameterized1' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:131]
+	Parameter W bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'floprc__parameterized1' (17#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:131]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized1' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:23]
+	Parameter W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized1' (17#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized2' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:23]
+	Parameter W bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized2' (17#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'conflict' [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/conflict.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'conflict' (18#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/conflict.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (19#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:28]
+INFO: [Synth 8-6155] done synthesizing module 'mips' (20#1) [/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv:1]
+WARNING: [Synth 8-3331] design conflict has unconnected port branchD
+WARNING: [Synth 8-3331] design conflict has unconnected port regwriteW
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[4]
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[3]
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[2]
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[1]
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[0]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[4]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[3]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[2]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[1]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[0]
+WARNING: [Synth 8-3331] design sl2 has unconnected port a[31]
+WARNING: [Synth 8-3331] design sl2 has unconnected port a[30]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1387.738 ; gain = 7.660 ; free physical = 661 ; free virtual = 3674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1387.738 ; gain = 7.660 ; free physical = 660 ; free virtual = 3674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a12ticsg325-1L
+INFO: [Device 21-403] Loading part xc7a12ticsg325-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1395.742 ; gain = 15.664 ; free physical = 659 ; free virtual = 3673
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "controls" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "shift" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1411.758 ; gain = 31.680 ; free physical = 608 ; free virtual = 3621
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 11    
+	                9 Bit    Registers := 1     
+	                5 Bit    Registers := 5     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 15    
+	   4 Input     32 Bit        Muxes := 2     
+	  12 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 5     
+	  14 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module maindec 
+Detailed RTL Component Info : 
++---Muxes : 
+	  12 Input     10 Bit        Muxes := 1     
+Module aludec 
+Detailed RTL Component Info : 
++---Muxes : 
+	  14 Input      3 Bit        Muxes := 1     
+Module shiftdec 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+Module floprc 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+Module flopr 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+Module flopr__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+Module controller 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module mux2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module flopenr 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module flopenrc 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module signext 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module regfile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module mux4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module mux2__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
+Module floprc__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module floprc__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module flopr__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopr__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module conflict 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 40 (col length:40)
+BRAMs: 40 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "c/md/controls" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design conflict has unconnected port branchD
+WARNING: [Synth 8-3331] design conflict has unconnected port regwriteW
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[4]
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[3]
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[2]
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[1]
+WARNING: [Synth 8-3331] design conflict has unconnected port rsE[0]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[4]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[3]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[2]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[1]
+WARNING: [Synth 8-3331] design conflict has unconnected port writeregW[0]
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[16]' (FDC) to 'dp/r3E/q_reg[17]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[17]' (FDC) to 'dp/r3E/q_reg[18]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[18]' (FDC) to 'dp/r3E/q_reg[19]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[19]' (FDC) to 'dp/r3E/q_reg[20]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[20]' (FDC) to 'dp/r3E/q_reg[21]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[21]' (FDC) to 'dp/r3E/q_reg[22]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[22]' (FDC) to 'dp/r3E/q_reg[23]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[23]' (FDC) to 'dp/r3E/q_reg[24]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[24]' (FDC) to 'dp/r3E/q_reg[25]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[25]' (FDC) to 'dp/r3E/q_reg[26]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[26]' (FDC) to 'dp/r3E/q_reg[27]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[27]' (FDC) to 'dp/r3E/q_reg[28]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[28]' (FDC) to 'dp/r3E/q_reg[29]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[29]' (FDC) to 'dp/r3E/q_reg[30]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[30]' (FDC) to 'dp/r3E/q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[11]' (FDC) to 'dp/r6E/q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[13]' (FDC) to 'dp/r6E/q_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[15]' (FDC) to 'dp/r6E/q_reg[4]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[14]' (FDC) to 'dp/r6E/q_reg[3]'
+INFO: [Synth 8-3886] merging instance 'dp/r3E/q_reg[12]' (FDC) to 'dp/r6E/q_reg[1]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 487 ; free virtual = 3502
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+--------------+-----------+----------------------+---------------+
+|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives    | 
++------------+--------------+-----------+----------------------+---------------+
+|mips        | dp/rf/rf_reg | Implied   | 32 x 32              | RAM32M x 12   | 
++------------+--------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+--------------+-----------+----------------------+---------------+
+|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives    | 
++------------+--------------+-----------+----------------------+---------------+
+|mips        | dp/rf/rf_reg | Implied   | 32 x 32              | RAM32M x 12   | 
++------------+--------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    39|
+|3     |LUT1   |     4|
+|4     |LUT2   |   153|
+|5     |LUT3   |    76|
+|6     |LUT4   |   189|
+|7     |LUT5   |   132|
+|8     |LUT6   |   402|
+|9     |RAM32M |    12|
+|10    |FDCE   |   366|
+|11    |IBUF   |    66|
+|12    |OBUF   |    99|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------+-------------------------+------+
+|      |Instance   |Module                   |Cells |
++------+-----------+-------------------------+------+
+|1     |top        |                         |  1539|
+|2     |  c        |controller               |   122|
+|3     |    regE   |floprc                   |   117|
+|4     |    regM   |flopr                    |     3|
+|5     |    regW   |flopr__parameterized0    |     2|
+|6     |  dp       |datapath                 |  1251|
+|7     |    alu    |alu                      |    20|
+|8     |    comp   |eqcmp                    |     3|
+|9     |    pcadd1 |adder                    |     8|
+|10    |    pcadd2 |adder_0                  |     8|
+|11    |    pcreg  |flopenr                  |    33|
+|12    |    r1D    |flopenr_1                |    64|
+|13    |    r1E    |floprc__parameterized0   |   175|
+|14    |    r1M    |flopr__parameterized1    |    32|
+|15    |    r1W    |flopr__parameterized1_2  |    32|
+|16    |    r2D    |flopenrc                 |   470|
+|17    |    r2E    |floprc__parameterized0_3 |   164|
+|18    |    r2M    |flopr__parameterized1_4  |    32|
+|19    |    r2W    |flopr__parameterized1_5  |    32|
+|20    |    r3E    |floprc__parameterized0_6 |    65|
+|21    |    r3M    |flopr__parameterized2    |     7|
+|22    |    r3W    |flopr__parameterized2_7  |     5|
+|23    |    r5E    |floprc__parameterized1   |     5|
+|24    |    r6E    |floprc__parameterized1_8 |    19|
+|25    |    r7E    |floprc__parameterized0_9 |    32|
+|26    |    resmux |mux2                     |    32|
+|27    |    rf     |regfile                  |    13|
++------+-----------+-------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 489 ; free virtual = 3504
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.812 ; gain = 217.734 ; free physical = 491 ; free virtual = 3506
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1597.820 ; gain = 217.734 ; free physical = 491 ; free virtual = 3506
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 51 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 12 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1653.840 ; gain = 0.000 ; free physical = 421 ; free virtual = 3436
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 12 instances were transformed.
+  RAM32M => RAM32M (inverted pins: WCLK) (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+85 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1653.840 ; gain = 273.852 ; free physical = 476 ; free virtual = 3491
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1653.840 ; gain = 0.000 ; free physical = 476 ; free virtual = 3491
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/project_2.runs/synth_1/mips.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mips_utilization_synth.rpt -pb mips_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  4 20:22:39 2020...

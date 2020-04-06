@@ -1,0 +1,51 @@
+addi $sp, $0, 64
+addi $t0, $0, 10
+addi $t1, $0, 100
+
+test1:
+addi $a0, $0, 28
+addi $a0, $0, 36
+nop
+jr $a0
+sw $t0, 0($sp)
+j test2
+sw $t1, 0($sp)
+
+test2:
+addi $sp, $sp, -8
+addi $a0, $0, 56
+addi $a0, $0, 64
+jr $a0
+sw $t0, 0($sp)
+j test3
+sw $t1, 0($sp)
+
+test3:
+addi $sp, $sp, -8
+addi $a0, $0, 100
+sw $a0, 0($0)
+addi $a0, $0, 108
+sw $a0, 8($0)
+lw $a0, 0($0)
+lw $a0, 8($0)
+jr $a0
+sw $t0, 0($sp)
+j test4
+sw $t1, 0($sp)
+
+test4:
+addi $sp, $sp, -8
+addi $a0, $0, 144
+sw $a0, 16($0)
+addi $a0, $0, 136
+lw $a0, 16($0)
+jr $a0
+sw $t0, 0($sp)
+j test5
+sw $t1, 0($sp)
+
+test5:
+nop
+nop
+nop
+nop

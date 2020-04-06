@@ -1,0 +1,61 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /home/tanyifan/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto c09adc25f7e64beaba29e1fd0df66737 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot cpu_tb_func_synth xil_defaultlib.cpu_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.OBUF
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.FDCE_default
+Compiling module xil_defaultlib.floprc
+Compiling module xil_defaultlib.flopr
+Compiling module xil_defaultlib.flopr__parameterized0
+Compiling module xil_defaultlib.controller
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.CARRY4
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.eqcmp
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.adder_0
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module xil_defaultlib.flopenr
+Compiling module xil_defaultlib.flopenr_1
+Compiling module xil_defaultlib.floprc__parameterized0
+Compiling module xil_defaultlib.flopr__parameterized1
+Compiling module xil_defaultlib.flopr__parameterized1_2
+Compiling module xil_defaultlib.flopenrc
+Compiling module xil_defaultlib.floprc__parameterized0_3
+Compiling module xil_defaultlib.flopr__parameterized1_4
+Compiling module xil_defaultlib.flopr__parameterized1_5
+Compiling module xil_defaultlib.floprc__parameterized0_6
+Compiling module xil_defaultlib.flopr__parameterized2
+Compiling module xil_defaultlib.flopr__parameterized2_7
+Compiling module xil_defaultlib.floprc__parameterized1
+Compiling module xil_defaultlib.floprc__parameterized1_8
+Compiling module xil_defaultlib.floprc__parameterized0_9
+Compiling module xil_defaultlib.mux2
+Compiling module unisims_ver.RAM32M(IS_WCLK_INVERTED=1'b1)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.cpu_tb
+WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 38. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 56. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 113. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 123. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+WARNING: [XSIM 43-3373] "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 141. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_tb_func_synth

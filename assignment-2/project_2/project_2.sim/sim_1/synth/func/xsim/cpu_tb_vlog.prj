@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"cpu_tb_func_synth.v" \
+
+sv xil_defaultlib  \
+"../../../../../mipsmem.sv" \
+"../../../../../../benchtest/cpu_tb.sv" \
+
+# Do not sort compile order
+nosort

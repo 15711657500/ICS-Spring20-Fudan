@@ -1,0 +1,7 @@
+0.6
+2018.3
+Dec  6 2018
+23:39:36
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv,1586051554,systemVerilog,,,,cpu_tb,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsmem.sv,1585534539,systemVerilog,,/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv,,dmem;imem,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/project_2.sim/sim_1/synth/timing/xsim/cpu_tb_time_synth.v,1586051571,verilog,,,,RAM32M_HD1;RAM32M_HD10;RAM32M_HD11;RAM32M_HD2;RAM32M_HD3;RAM32M_HD4;RAM32M_HD5;RAM32M_HD6;RAM32M_HD7;RAM32M_HD8;RAM32M_HD9;RAM32M_UNIQ_BASE_;adder;adder_0;alu;controller;datapath;eqcmp;flopenr;flopenr_1;flopenrc;flopr;flopr__parameterized0;flopr__parameterized1;flopr__parameterized1_2;flopr__parameterized1_4;flopr__parameterized1_5;flopr__parameterized2;flopr__parameterized2_7;floprc;floprc__parameterized0;floprc__parameterized0_3;floprc__parameterized0_6;floprc__parameterized0_9;floprc__parameterized1;floprc__parameterized1_8;glbl;mips;mux2;regfile,,,,,,,,

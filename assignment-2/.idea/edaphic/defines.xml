@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SVCompilerDirectivesDefines">
+    <option name="defines">
+      <map>
+        <entry key="/cpu_tb.sv">
+          <value>
+            <map>
+              <entry key="NAME">
+                <value>
+                  <list>
+                    <Body>
+                      <option name="offset" value="66" />
+                      <option name="replacementList" value="&quot;benchtest/&quot;" />
+                      <option name="source" value="/cpu_tb.sv" />
+                    </Body>
+                  </list>
+                </value>
+              </entry>
+              <entry key="PATH_PREFIX">
+                <value>
+                  <list>
+                    <Body>
+                      <option name="offset" value="8" />
+                      <option name="replacementList" value="&quot;/home/sunflower/Downloads/Pipeline/&quot;" />
+                      <option name="source" value="/cpu_tb.sv" />
+                    </Body>
+                  </list>
+                </value>
+              </entry>
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="dependencies">
+      <map>
+        <entry key="NAME">
+          <value>
+            <set>
+              <option value="/cpu_tb.sv" />
+            </set>
+          </value>
+        </entry>
+        <entry key="PATH_PREFIX">
+          <value>
+            <set>
+              <option value="/cpu_tb.sv" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="status" value="NORMAL" />
+  </component>
+</project>

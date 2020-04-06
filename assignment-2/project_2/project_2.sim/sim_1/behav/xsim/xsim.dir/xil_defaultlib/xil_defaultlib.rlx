@@ -1,0 +1,12 @@
+0.6
+2018.3
+Dec  6 2018
+23:39:36
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv,1585968751,systemVerilog,,,,cpu_tb,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/alu.sv,1585619764,systemVerilog,,/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/conflict.sv,,alu,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/conflict.sv,1586000244,systemVerilog,,/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv,,conflict,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mips.sv,1586002902,systemVerilog,,/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsmem.sv,,aludec;controller;datapath;jrdec;maindec;mips;shiftdec,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsmem.sv,1585534539,systemVerilog,,/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv,,dmem;imem,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsparts.sv,1585969367,systemVerilog,,/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv,,adder;eqcmp;flopenr;flopenrc;flopr;floprc;mux2;mux4;regfile;signext;sl2;zeroext,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/pipreg.sv,1585552002,systemVerilog,,/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv,,regD;regE;regM;regW,,,,,,,,
+/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/project_2.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,

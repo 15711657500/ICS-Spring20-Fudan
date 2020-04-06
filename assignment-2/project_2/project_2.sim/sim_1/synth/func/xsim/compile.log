@@ -1,0 +1,34 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/project_2.sim/sim_1/synth/func/xsim/cpu_tb_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module adder_0
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module eqcmp
+INFO: [VRFC 10-311] analyzing module flopenr
+INFO: [VRFC 10-311] analyzing module flopenr_1
+INFO: [VRFC 10-311] analyzing module flopenrc
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module flopr__parameterized0
+INFO: [VRFC 10-311] analyzing module flopr__parameterized1
+INFO: [VRFC 10-311] analyzing module flopr__parameterized1_2
+INFO: [VRFC 10-311] analyzing module flopr__parameterized1_4
+INFO: [VRFC 10-311] analyzing module flopr__parameterized1_5
+INFO: [VRFC 10-311] analyzing module flopr__parameterized2
+INFO: [VRFC 10-311] analyzing module flopr__parameterized2_7
+INFO: [VRFC 10-311] analyzing module floprc
+INFO: [VRFC 10-311] analyzing module floprc__parameterized0
+INFO: [VRFC 10-311] analyzing module floprc__parameterized0_3
+INFO: [VRFC 10-311] analyzing module floprc__parameterized0_6
+INFO: [VRFC 10-311] analyzing module floprc__parameterized0_9
+INFO: [VRFC 10-311] analyzing module floprc__parameterized1
+INFO: [VRFC 10-311] analyzing module floprc__parameterized1_8
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/project_2/mipsmem.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_tb

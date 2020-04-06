@@ -1,0 +1,47 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+========== Test: rf ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/rf/rf.data could not be opened
+========== In init ==========
+         20 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] rf
+
+[Done]
+
+CPI = 1.176471
+
+$finish called at time : 5106326 ps : File "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 169
+========== Test: rf ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/rf/rf.data could not be opened
+========== In init ==========
+         20 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] rf
+
+[Done]
+
+CPI = 1.176471
+
+$finish called at time : 5106326 ps : File "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 169
+========== Test: rf ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/rf/rf.data could not be opened
+========== In init ==========
+         20 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] rf
+
+[Done]
+
+CPI = 1.176471
+
+$finish called at time : 5106326 ps : File "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 169

@@ -1,0 +1,95 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+========== Test: ad hoc ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/ad hoc/ad hoc.data could not be opened
+========== In init ==========
+         22 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] ad hoc
+
+========== Test: factorial ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/factorial/factorial.data could not be opened
+========== In init ==========
+         28 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] factorial
+
+========== Test: bubble sort ==========
+========== In init ==========
+         21 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] bubble sort
+
+========== Test: gcd ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/gcd/gcd.data could not be opened
+========== In init ==========
+         18 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] gcd
+
+========== Test: quick multiply ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/quick multiply/quick multiply.data could not be opened
+========== In init ==========
+         17 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] quick multiply
+
+========== Test: bisection ==========
+========== In init ==========
+         21 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] bisection
+
+========== Test: rf ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/rf/rf.data could not be opened
+========== In init ==========
+         20 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] rf
+
+========== Test: testzeroext ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/testzeroext/testzeroext.data could not be opened
+========== In init ==========
+         12 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] testzeroext
+
+========== Test: testjr ==========
+WARNING: file /home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/testjr/testjr.data could not be opened
+========== In init ==========
+         41 instructions in total
+========== In runtime checker ==========
+successfully pass runtime checker
+========== In memory judge ==========
+successfully pass memory judge
+[OK] testjr
+
+[Done]
+
+CPI = 1.431290
+
+$finish called at time : 207580 ns : File "/home/tanyifan/Desktop/ICS-Spring20-Fudan/assignment-2/benchtest/cpu_tb.sv" Line 169
