@@ -40,9 +40,7 @@ module cache #(
 	// interface with memory
 	output [31:0] maddr, mwrite_data,
 	output        m_wen,
-	input [31:0]  mread_data,
-	output [31:0] testRAM,
-	output testdirty
+	input [31:0]  mread_data
 	/* input         mready // memory ready ? */
 );
 
@@ -70,9 +68,7 @@ module cache #(
 	set2 sets[2**SET_WIDTH - 1:0] (.clk(clk), .reset(reset),.ctls(ctlss), .addr(maddr), 
 								.write_data(write_data),.mread_data(mread_data),
 								.hit(hits),.dirty(dirtys),.read_data(read_datas),
-								.tag(tags));
-	assign testdirty = dirtys[0];
-	assign testRAM = read_datas[0];							
+								.tag(tags));						
     assign hit = (hits[setbits] & ~st) | ~input_ready;
 	assign dirty = dirtys[setbits];
 	assign ctls = {lw_en, set_valid, set_dirty, offset, strategy_en, offset_sel};
