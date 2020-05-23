@@ -28,10 +28,40 @@ module line #(
             end
         end
         else if(sw) begin
-            if(state != 2'b11 && taken)
-                state <= state + 1;
-            if(state != 2'b00 && ~taken)
-                state <= state - 1;
+            // if(state != 2'b11 && taken)
+            //     state <= state + 1;
+            // if(state != 2'b00 && ~taken)
+            //     state <= state - 1;
+            case(state)
+                2'b00:begin // not taken
+                    if(taken)
+                        state <= 2'b01;
+                end
+
+                2'b01:begin // not taken
+                    if(taken)
+                        state <= 2'b11;
+                    else
+                        state <= 2'b00;
+                end
+
+                2'b10:begin // taken
+                    if(taken)
+                        state <= 2'b11;
+                    else
+                        state <= 2'b00;
+                end
+
+                2'b11:begin
+                    if (~taken) begin
+                        state <= 2'b10;
+                    end
+                end
+
+                default:begin
+                    
+                end
+            endcase
         end
     end
 endmodule
