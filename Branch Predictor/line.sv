@@ -17,11 +17,12 @@ module line #(
     assign predict_taken = state[1];
     always_ff @( posedge clk, posedge reset ) begin
         if (reset) begin
-            {valid, tag, state, addr} <= 0;
+            {valid, tag, addr} <= 0;
+            state <= 2'b00;
         end
         else if (w_en) begin
             {addr} <= {set_addr};
-            state <= 0;
+            state <= 2'b00;
             if (~valid) begin
                 {valid, tag} <= {set_valid, set_tag};
             end

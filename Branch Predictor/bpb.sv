@@ -34,17 +34,20 @@ module bpb #(
     logic [ENTRIES-1:0][31:0]addrs;
     logic set_valid;
     logic [TAG_WIDTH-1:0]set_tag;
+    logic [31:0]set_addr;
     logic [ENTRIES-1:0]w_ens, sws;
     logic w_en, sw;
+    logic hit;
+    
     line lines[ENTRIES-1:0](.clk(clk),.reset(reset),.w_en(w_ens),.sw(sws),.taken(real_taken),
-                            .set_valid(set_valid),.set_tag(set_tag),.set_addr(real_adr),
+                            .set_valid(set_valid),.set_tag(set_tag),.set_addr(set_addr),
                             .valid(valids),.tag(tags),.addr(addrs),.predict_taken(predict_takens));
     branch_controller ctler(.clk(clk),.reset(reset),.stall(stall),.flush(flush),
-                     .isbranch(isbranch&real_taken),.hit(hit),.conflict(conflict),
-                     .w_en(w_en),.sw(sw),.set_valid(set_valid),.set_tag(set_tag));
+                     .isbranch(isbranch),.instr_adr(instr_adr),.real_adr(real_adr),.hit(hit),.conflict(conflict),
+                     .w_en(w_en),.sw(sw),.set_valid(set_valid),.set_tag(set_tag),.set_addr(set_addr));
     
     int i1, i2, i3;
-    assign conflict = isbranch & real_taken & (real_adr != addrs[i1]);
+    assign conflict = isbranch & (real_adr != addrs[i1next]);
     always@({valids,tags,instr_adr}) begin
         for (i1 = 0; i1 < ENTRIES; i1 = i1 + 1) begin
             if (valids[i1] && tags[i1] == instr_adr) begin
@@ -52,6 +55,7 @@ module bpb #(
             end
         end
     end
+    assign hit = (i1 < ENTRIES);
     logic [ENTRIES-1:0]w_enext;
     assign w_enext[0] = w_en;
     assign w_enext[ENTRIES-1:1] = 0;
@@ -59,7 +63,23 @@ module bpb #(
     logic [ENTRIES-1:0]swext;
     assign swext[0] = sw;
     assign swext[ENTRIES-1:1] = 0;
-    assign sws = w_enext << i1;
+    // always_ff @( posedge clk, posedge reset ) begin 
+    //     if (reset) begin
+    //         sws <= 0;
+    //     end
+    //     else
+    //         sws <= swext << i1;
+    // end
+    int i1next;
+    always_ff @( posedge clk, posedge reset ) begin 
+        if (reset) begin
+            i1next <= 0;
+        end
+        else if(~stall)
+            i1next <= i1;
+    end
+    assign sws = swext << i1next;
+    
     always@(valids) begin
         for (i2 = 0; i2 < ENTRIES; i2 = i2 + 1) begin
             if (~valids[i2]) begin

@@ -71,8 +71,13 @@ module datapath #(
     logic [31:0] aluoutE1;
     logic [31:0] pcplus4E;
     logic flushD, stallD;
-    mux2#(32) pcbrmux(.d0(pcplus4F), .d1(pcbranchD), .out(pcnextbrFD), .s(pcsrcD));
-    mux2#(32) pcmux(.d0(pcnextbrFD), .d1({pcplus4D[31:28], instrD[25:0], 2'b00}), .s(jumpD), .out(pcnextFD0));
+    logic [31:0]predict_adr, pcnextbrFD1, pcplus4F1;
+    logic predict_taken;
+    logic predict_taken1;
+    mux2#(32) pcplus4Fmux(.d0(pcplus4F),.d1(pcplus4D),.out(pcplus4F1),.s(flushD&~stallD));
+    mux2#(32) pcbrmux(.d0(pcplus4F1), .d1(pcbranchD), .out(pcnextbrFD), .s(pcsrcD&~predict_taken1));
+    mux2#(32) bpmux(.d0(pcnextbrFD),.d1(predict_adr),.out(pcnextbrFD1),.s(predict_taken&~flushD));
+    mux2#(32) pcmux(.d0(pcnextbrFD1), .d1({pcplus4D[31:28], instrD[25:0], 2'b00}), .s(jumpD), .out(pcnextFD0));
     mux2#(32) jrmux(.d0(pcnextFD0), .d1(srca2D), .s(jrD), .out(pcnextFD));
     flopenr#(32) pcreg(.en(~stallF), .d(pcnextFD), .clk(clk), .out(pcF), .reset(reset));
     adder pcadd1(.a(pcF), .b(32'b100), .out(pcplus4F));
@@ -85,7 +90,7 @@ module datapath #(
 
     flopenr#(32) r1D(clk, reset, ~stallD, pcplus4F, pcplus4D);
     flopenrc#(32) r2D(clk, reset, ~stallD, flushD, instrF, instrD);
-
+    flopenrc#(1) r3D(clk, reset, ~stallD, flushD, predict_taken, predict_taken1);
     signext se(.a(instrD[15:0]), .out(signimmD), .s(andi_oriD));
     //zeroext ze(.a(instrD[15:0]), .out(zeroimmD));
     sl2 sl(.a(signimmD), .out(signimmshD));
@@ -98,8 +103,8 @@ module datapath #(
 //    mux4#(32) forwardbdmux(.d0(srcbD), .d1(aluoutM), .d2(readdataM), .d3(aluoutE1), .s(forwardBD), .out(srcb2D));
     eqcmp comp(srca3D, srcb2D, equalD);
     mux2#(32) shiftmux(.d0(srca2D), .d1({27'b0, instrD[10:6]}), .s(shiftD), .out(srca3D));
-    assign flushD = pcsrcD | jumpD | jrD;
-
+    assign flushD = (pcsrcD ^ predict_taken1) | jumpD | jrD;
+    // assign flushD = (pcsrcD ^ predict_taken1) | jumpD | jrD;
 //    // Execute
     mux2#(5) writeramux(rtE, 5'b11111, regwriteE & jumpE, rtE1);
     mux2#(5) wrmux(.d0(rtE1), .d1(rdE), .s(regdstE), .out(writeregE));
@@ -129,9 +134,9 @@ module datapath #(
         .writeregW(writeregW), .regwriteE(regwriteE), .regwriteM(regwriteM), .regwriteW(regwriteW), .jrD(jrD),
         .memtoregE(memtoregE), .memtoregM(memtoregM), .branchD(branchD), .forwardAD(forwardAD), .forwardBD(forwardBD), .forwardAE(forwardAE), .forwardBE(forwardBE),
         .stallF(stallF), .stallD(stallD), .flushE(flushE));
-    bqb bqb(.clk(clk),.reset(reset),.stall(stallD),.flush(flushD),
-            .instr_adr(instrD[TAG_WIDTH-1:0]),.isbranch(branchD),.real_taken(pcsrcD),.real_adr(pcnextbrFD),
-            .predict_taken(),.predict_adr());
+    bpb bpb(.clk(clk),.reset(reset),.stall(stallD),.flush(flushD),
+            .instr_adr(instrF[TAG_WIDTH-1:0]),.isbranch(branchD),.real_taken(pcsrcD),.real_adr(pcbranchD),
+            .predict_taken(predict_taken),.predict_adr(predict_adr));
 endmodule: datapath
 module controller(
 //    input logic [5:0] op, funct,
